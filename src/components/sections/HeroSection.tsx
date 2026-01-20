@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ChevronDown, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { TerminalPrompt } from '../ui/TerminalPrompt';
+import { ScrollDownButton } from '../ui/ScrollDownButton';
 
 const roleLabels = ['iOS Engineer @ Vox', 'AI Researcher @ GCU', "May '26 Grad"];
 
@@ -12,7 +13,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 pt-20">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20">
       <div className="max-w-6xl mx-auto w-full">
         <div
           className={`transition-all duration-700 ease-out ${
@@ -103,12 +104,12 @@ export const HeroSection = () => {
         </div>
 
         <div
-          className={`absolute bottom-12 left-1/2 -translate-x-1/2 transition-all duration-700 ease-out ${
-            mounted ? 'opacity-100 animate-bounce' : 'opacity-0'
+          className={`transition-all duration-700 ease-out ${
+            mounted ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ transitionDelay: '600ms' }}
         >
-          <ChevronDown className="w-6 h-6" style={{ color: '#52525b' }} />
+          <ScrollDownButton targetId="experience" />
         </div>
       </div>
     </section>

@@ -1,11 +1,12 @@
 import { AnimatedSection } from '../ui/AnimatedSection';
 import { TerminalPrompt } from '../ui/TerminalPrompt';
 import { BentoProjectCard } from '../cards/BentoProjectCard';
+import { ScrollDownButton } from '../ui/ScrollDownButton';
 import { projects } from '../../data/portfolio';
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="px-6 py-24">
+    <section id="projects" className="relative px-6 py-24 pb-20">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
           <TerminalPrompt command="projects --list" />
@@ -27,6 +28,7 @@ export const ProjectsSection = () => {
           ))}
         </div>
       </div>
+      <ScrollDownButton targetId="contact" />
     </section>
   );
 };
