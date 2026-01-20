@@ -45,13 +45,13 @@ export const HeroSection = () => {
           </p>
 
           <div
-            className={`flex items-center gap-2 text-sm font-mono mt-6 flex-wrap transition-all duration-700 ease-out ${
+            className={`flex items-center gap-3 text-sm font-mono mt-6 flex-wrap transition-all duration-700 ease-out ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
             style={{ transitionDelay: '300ms' }}
           >
             {roleLabels.map((label, index) => (
-              <span key={label}>
+              <div key={label} className="flex items-center gap-3">
                 <span
                   className="px-2 py-1 rounded"
                   style={{
@@ -63,9 +63,9 @@ export const HeroSection = () => {
                   {label}
                 </span>
                 {index < roleLabels.length - 1 && (
-                  <span style={{ color: '#3f3f46' }}> → </span>
+                  <span className="hidden md:inline" style={{ color: '#3f3f46' }}>→</span>
                 )}
-              </span>
+              </div>
             ))}
           </div>
         </div>
