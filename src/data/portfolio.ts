@@ -42,28 +42,42 @@ export const experiences: Experience[] = [
   }
 ];
 
-export const featuredProject: Project = {
-  title: 'Lopes+',
-  description: 'Consolidated 10+ university systems into one mobile experience. Digital student ID, real-time gym status, live dining cameras, event registration, budget analytics, and interactive campus navigation.',
-  metrics: [
-    { value: '~300ms', label: 'Launch Time' },
-    { value: '10+', label: 'Systems Unified' },
-    { value: '13x', label: 'Faster Than Official' }
-  ],
-  tech: ['SwiftUI', 'PassKit', 'Swift Concurrency', 'Combine', 'SwiftData', 'MapKit']
-};
-
-export const otherProjects: Project[] = [
+export const projects: Project[] = [
+  {
+    title: 'Lopes+',
+    description: 'Consolidated 10+ university systems into one mobile experience. Digital student ID, real-time gym status, live dining cameras, event registration, budget analytics, and interactive campus navigation.',
+    images: [
+      '/projects/lopes-plus/Home/normal.png',
+      '/projects/lopes-plus/Budget/normal.png',
+      '/projects/lopes-plus/Venue/normal.png'
+    ],
+    featured: true,
+    metrics: [
+      { value: '~300ms', label: 'Launch Time' },
+      { value: '10+', label: 'Systems Unified' },
+      { value: '13x', label: 'Faster Than Official' }
+    ],
+    tech: ['SwiftUI', 'PassKit', 'Swift Concurrency', 'Combine', 'SwiftData', 'MapKit']
+  },
   {
     title: 'HB Online Coaching',
     description: 'Full-stack coaching platform with Stripe payments, real-time chat, and scheduling features.',
+    image: '/projects/coaching/Messages.png',
     tech: ['SvelteKit', 'Firebase', 'AWS Lambda', 'Stripe'],
-    links: { github: '#' }
+    links: { }
   },
   {
     title: 'Event Coordination Platform',
     description: 'Built in one week. Event creation, attendance tracking, and SMS notifications via email gateway.',
+    image: '/projects/event-platform/home.jpg',
     tech: ['React', 'MongoDB', 'Express', 'Tailwind'],
-    links: { github: '#', live: '#' }
+    links: { github: 'https://github.com/ObadiahF/Invite-app' }
+  },
+  {
+    title: 'Math Game',
+    description: 'Interactive math learning game with progressive difficulty and score tracking.',
+    image: '/projects/math-game/home.png',
+    tech: ['Express.js', 'Node JS', 'Websockets', 'Vanilla JS'],
+    links: { github: 'https://github.com/ObadiahF/simpleWebsocketGame', live: 'https://mathgame.obadiahfusco.com/'}
   }
 ];

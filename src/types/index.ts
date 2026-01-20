@@ -27,6 +27,9 @@ export interface Project {
   metrics?: Metric[];
   tech: string[];
   links?: ProjectLinks;
+  image?: string;
+  images?: string[];
+  featured?: boolean;
 }
 
 // Component Props Types
