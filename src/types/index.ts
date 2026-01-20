@@ -36,6 +36,7 @@ export interface Project {
 export interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }
 
 export interface TerminalPromptProps {

@@ -5,7 +5,7 @@ export const TerminalPrompt = ({
   command,
   delay = 0
 }: TerminalPromptProps) => {
-  const { displayedText, isComplete } = useTypingEffect(command, 40, delay);
+  const { displayedText, isComplete } = useTypingEffect(command, 40, delay, 5000);
 
   return (
     <div className="flex items-center gap-2 font-mono text-sm md:text-base mb-4">

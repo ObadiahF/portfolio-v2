@@ -12,7 +12,7 @@ export const ExperienceSection = () => (
 
       <div className="grid gap-6 mt-8">
         {experiences.map((exp, i) => (
-          <AnimatedSection key={i}>
+          <AnimatedSection key={i} delay={i * 100}>
             <ExperienceCard {...exp} />
           </AnimatedSection>
         ))}
