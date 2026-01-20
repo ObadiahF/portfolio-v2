@@ -8,17 +8,16 @@ export const ExperienceCard = ({
   location,
   tech,
   highlights,
-  icon: Icon
+  logo
 }: ExperienceCardProps) => (
   <GlassCard className="p-6">
     <div className="flex items-start justify-between mb-4">
       <div className="flex items-center gap-3">
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, rgba(52,211,153,0.2) 0%, rgba(34,211,238,0.2) 100%)' }}
-        >
-          <Icon className="w-5 h-5" style={{ color: '#34d399' }} />
-        </div>
+        <img
+          src={logo}
+          alt={`${company} logo`}
+          className="w-10 h-10 rounded-xl object-cover"
+        />
         <div>
           <h3 className="font-semibold" style={{ color: '#ffffff' }}>{company}</h3>
           <p className="text-sm" style={{ color: '#a1a1aa' }}>{role}</p>

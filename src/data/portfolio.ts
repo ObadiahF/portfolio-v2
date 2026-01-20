@@ -1,4 +1,3 @@
-import { Smartphone, Code2, Cpu } from 'lucide-react';
 import type { Experience, Project } from '../types';
 
 export const experiences: Experience[] = [
@@ -7,7 +6,7 @@ export const experiences: Experience[] = [
     role: 'Software Engineering Intern',
     date: 'May 2025 - Aug 2025',
     location: 'Cupertino, CA',
-    icon: Smartphone,
+    logo: '/Apple.jpeg',
     tech: ['Swift', 'Objective-C', 'TypeScript', 'Xcode', 'Jenkins'],
     highlights: [
       'Designed and implemented a new feature for Pages on iCloud',
@@ -20,7 +19,7 @@ export const experiences: Experience[] = [
     role: 'Software Engineer',
     date: 'Nov 2025 - Present',
     location: 'Phoenix, AZ',
-    icon: Code2,
+    logo: '/TheVoxCompany.jpeg',
     tech: ['Swift', 'SwiftUI', 'Firebase'],
     highlights: [
       'Architected social platform with 6,000+ active users',
@@ -33,7 +32,7 @@ export const experiences: Experience[] = [
     role: 'Research Intern',
     date: 'Sep 2024 - Present',
     location: 'Phoenix, AZ',
-    icon: Cpu,
+    logo: '/CanyonAIResearch.jpeg',
     tech: ['Python', 'PyTorch', 'Scikit-learn'],
     highlights: [
       'Researching EEG to wheelchair movement translation',

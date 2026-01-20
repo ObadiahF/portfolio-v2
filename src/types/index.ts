@@ -1,4 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 // Data Types
@@ -17,7 +16,7 @@ export interface Experience {
   role: string;
   date: string;
   location: string;
-  icon: LucideIcon;
+  logo: string;
   tech: string[];
   highlights: string[];
 }
