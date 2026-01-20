@@ -14,11 +14,19 @@ export const BentoProjectCard = ({
   featured = false
 }: ProjectCardProps) => {
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
-  const hasMultipleImages = images && images.length > 0;
-  const hasSingleImage = image && !hasMultipleImages;
+
+  // Determine image layout based on count
+  const imageCount = images?.length || 0;
+  const hasSingleImageInArray = imageCount === 1;
+  const hasFewImages = imageCount >= 2 && imageCount <= 3;
+  const hasManyImages = imageCount >= 4;
+  const hasSingleImage = (image && !images) || hasSingleImageInArray;
+
+  // Get the single image source
+  const singleImageSrc = hasSingleImageInArray ? images![0] : image;
 
   // Get all images as array for the modal
-  const allImages = hasMultipleImages ? images : hasSingleImage ? [image] : [];
+  const allImages = images && images.length > 0 ? images : image ? [image] : [];
 
   return (
     <div
@@ -31,19 +39,33 @@ export const BentoProjectCard = ({
         backdropFilter: 'blur(8px)'
       }}
     >
-      {/* Multiple Images - side by side for mobile app screenshots */}
-      {hasMultipleImages && (
+      {/* Single Image - full width */}
+      {hasSingleImage && singleImageSrc && (
+        <div className="p-6 pb-4">
+          <img
+            src={singleImageSrc}
+            alt={`${title} screenshot`}
+            className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105 cursor-pointer"
+            style={{
+              filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))'
+            }}
+            onClick={() => setPreviewIndex(0)}
+          />
+        </div>
+      )}
+
+      {/* 2-3 Images - side by side */}
+      {hasFewImages && images && (
         <div className="flex justify-center items-end gap-4 p-6 pb-4">
           {images.map((img, i) => (
             <img
               key={i}
               src={img}
               alt={`${title} screenshot ${i + 1}`}
-              className="w-auto object-contain rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-110 hover:z-10 cursor-pointer"
+              className="h-auto object-contain rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:z-10 cursor-pointer"
               style={{
-                maxHeight: featured ? '350px' : '200px',
-                maxWidth: `${85 / images.length}%`,
-                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))'
+                maxWidth: `${90 / images.length}%`,
+                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))'
               }}
               onClick={() => setPreviewIndex(i)}
             />
@@ -51,19 +73,21 @@ export const BentoProjectCard = ({
         </div>
       )}
 
-      {/* Single Image */}
-      {hasSingleImage && (
-        <div className="p-6 pb-4">
-          <img
-            src={image}
-            alt={`${title} screenshot`}
-            className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-            style={{
-              maxHeight: featured ? '300px' : '200px',
-              filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))'
-            }}
-            onClick={() => setPreviewIndex(0)}
-          />
+      {/* 4+ Images - albums-style grid */}
+      {hasManyImages && images && (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 p-6 pb-4">
+          {images.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt={`${title} screenshot ${i + 1}`}
+              className="h-auto object-contain rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:z-10 cursor-pointer"
+              style={{
+                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))'
+              }}
+              onClick={() => setPreviewIndex(i)}
+            />
+          ))}
         </div>
       )}
 
