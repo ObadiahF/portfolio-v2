@@ -18,6 +18,8 @@ export const ImagePreviewModal = ({
   onClose
 }: ImagePreviewModalProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [slideOffset, setSlideOffset] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const hasMultipleImages = images.length > 1;
 
@@ -25,16 +27,42 @@ export const ImagePreviewModal = ({
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(initialIndex);
+      setSlideOffset(0);
     }
   }, [isOpen, initialIndex]);
 
   const goToPrevious = useCallback(() => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
-  }, [images.length]);
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setSlideOffset(100); // Slide right to reveal previous
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+      setSlideOffset(0);
+      setIsAnimating(false);
+    }, 300);
+  }, [images.length, isAnimating]);
 
   const goToNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
-  }, [images.length]);
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setSlideOffset(-100); // Slide left to reveal next
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+      setSlideOffset(0);
+      setIsAnimating(false);
+    }, 300);
+  }, [images.length, isAnimating]);
+
+  const goToIndex = useCallback((index: number) => {
+    if (index === currentIndex || isAnimating) return;
+    setIsAnimating(true);
+    setSlideOffset(index > currentIndex ? -100 : 100);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setSlideOffset(0);
+      setIsAnimating(false);
+    }, 300);
+  }, [currentIndex, isAnimating]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -85,6 +113,10 @@ export const ImagePreviewModal = ({
 
   if (!isOpen || images.length === 0) return null;
 
+  // Get prev/next indices for carousel
+  const prevIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+  const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+
   const modalContent = (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center"
@@ -119,17 +151,53 @@ export const ImagePreviewModal = ({
         </button>
       )}
 
-      {/* Image */}
-      <img
-        src={images[currentIndex]}
-        alt={`${alt} ${currentIndex + 1}`}
-        className="max-w-[85vw] max-h-[85vh] object-contain rounded-lg select-none"
-        style={{
-          filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
-        }}
+      {/* Image carousel container */}
+      <div
+        className="relative overflow-hidden"
+        style={{ width: '85vw', height: '85vh' }}
         onClick={(e) => e.stopPropagation()}
-        draggable={false}
-      />
+      >
+        <div
+          className="flex items-center h-full"
+          style={{
+            transform: `translateX(calc(-100% + ${slideOffset}%))`,
+            transition: isAnimating ? 'transform 300ms ease-out' : 'none'
+          }}
+        >
+          {/* Previous image */}
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+            <img
+              src={images[prevIndex]}
+              alt={`${alt} ${prevIndex + 1}`}
+              className="max-w-full max-h-full object-contain rounded-lg select-none"
+              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              draggable={false}
+            />
+          </div>
+
+          {/* Current image */}
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+            <img
+              src={images[currentIndex]}
+              alt={`${alt} ${currentIndex + 1}`}
+              className="max-w-full max-h-full object-contain rounded-lg select-none"
+              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              draggable={false}
+            />
+          </div>
+
+          {/* Next image */}
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+            <img
+              src={images[nextIndex]}
+              alt={`${alt} ${nextIndex + 1}`}
+              className="max-w-full max-h-full object-contain rounded-lg select-none"
+              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              draggable={false}
+            />
+          </div>
+        </div>
+      </div>
 
       {/* Next button */}
       {hasMultipleImages && (
@@ -153,7 +221,7 @@ export const ImagePreviewModal = ({
               key={i}
               onClick={(e) => {
                 e.stopPropagation();
-                setCurrentIndex(i);
+                goToIndex(i);
               }}
               className={`w-2.5 h-2.5 rounded-full transition-all ${
                 i === currentIndex
