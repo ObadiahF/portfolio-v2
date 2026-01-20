@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
   },
   {
     company: 'The Vox Company',
-    role: 'Software Engineer',
+    role: 'Software Engineer (Contract)',
     date: 'Nov 2025 - Present',
     location: 'Phoenix, AZ',
     logo: '/TheVoxCompany.jpeg',
@@ -38,6 +38,19 @@ export const experiences: Experience[] = [
       'Researching EEG to wheelchair movement translation',
       'Developed CNN achieving 97% accuracy on EEG datasets',
       'Enabling enhanced mobility for disabled individuals'
+    ]
+  },
+  {
+    company: 'Fifth Gear Tech',
+    role: 'Software Engineering Intern',
+    date: 'Jun 2023 - Aug 2024',
+    location: 'Vancouver, WA',
+    logo: '/Fifth-gear-tech.png',
+    tech: ['React', 'Node.js', 'TypeScript', 'Express', 'AWS DynamoDB', 'AWS Lambda'],
+    highlights: [
+      'Integrated AWS DynamoDB for enhanced caching, improving data retrieval times by 42%.',
+      'Developed reusable libraries to streamline AWS service integration, reducing duplicate code and creating a more sustainable JavaScript codebase.',
+      'Collaborated with engineers and team leads in biweekly standups to plan, strategize, and deliver solutions, with all contributions shipped to production.'
     ]
   }
 ];

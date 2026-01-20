@@ -16,7 +16,7 @@ export const BentoProjectCard = ({
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
+      className={`group relative rounded-2xl transition-all duration-300 ${
         featured ? 'md:col-span-2 md:row-span-1' : ''
       }`}
       style={{
@@ -27,48 +27,40 @@ export const BentoProjectCard = ({
     >
       {/* Multiple Images - side by side for mobile app screenshots */}
       {hasMultipleImages && (
-        <div className={`relative overflow-hidden ${featured ? 'h-80' : 'h-48'}`}>
-          <div className="flex justify-center items-end gap-4 h-full p-4 pb-0">
-            {images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`${title} screenshot ${i + 1}`}
-                className="h-full w-auto object-contain rounded-t-xl shadow-2xl transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  maxWidth: `${90 / images.length}%`
-                }}
-              />
-            ))}
-          </div>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to top, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.3) 30%, transparent 60%)'
-            }}
-          />
+        <div className="flex justify-center items-end gap-4 p-6 pb-4">
+          {images.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt={`${title} screenshot ${i + 1}`}
+              className="w-auto object-contain rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-110 hover:z-10"
+              style={{
+                maxHeight: featured ? '350px' : '200px',
+                maxWidth: `${85 / images.length}%`,
+                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))'
+              }}
+            />
+          ))}
         </div>
       )}
 
       {/* Single Image */}
       {hasSingleImage && (
-        <div className={`relative overflow-hidden ${featured ? 'h-64' : 'h-48'}`}>
+        <div className="p-6 pb-4">
           <img
             src={image}
             alt={`${title} screenshot`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div
-            className="absolute inset-0"
+            className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
             style={{
-              background: 'linear-gradient(to top, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.3) 50%, transparent 100%)'
+              maxHeight: featured ? '300px' : '200px',
+              filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))'
             }}
           />
         </div>
       )}
 
       {/* Content Section */}
-      <div className={`p-6 ${(hasMultipleImages || hasSingleImage) ? '-mt-16 relative z-10' : ''}`}>
+      <div className="p-6 pt-2">
         <div className="flex items-start justify-between mb-3">
           <h3
             className={`font-semibold ${featured ? 'text-2xl' : 'text-xl'}`}
