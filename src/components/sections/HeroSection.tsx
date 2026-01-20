@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, FileText } from 'lucide-react';
 import { TerminalPrompt } from '../ui/TerminalPrompt';
 
 const roleLabels = ['iOS Engineer @ Vox', 'AI Researcher @ GCU', "May '26 Grad"];
@@ -89,6 +89,16 @@ export const HeroSection = () => {
             style={{ border: '1px solid rgba(255,255,255,0.1)', color: '#ffffff' }}
           >
             Get in Touch
+          </a>
+          <a
+            href="https://docs.google.com/document/d/1IFknNg2vOOQ6i8CGrYbttxDdS9X5-fQB/edit?usp=sharing&ouid=101486817433600214935&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-xl transition-all hover:bg-white/5 flex items-center gap-2"
+            style={{ border: '1px solid rgba(255,255,255,0.1)', color: '#ffffff' }}
+          >
+            <FileText className="w-4 h-4" />
+            Resume
           </a>
         </div>
 

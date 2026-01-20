@@ -4,9 +4,9 @@ export const Navigation = () => (
     style={{ backgroundColor: 'rgba(9,9,11,0.8)', backdropFilter: 'blur(12px)' }}
   >
     <div className="max-w-6xl mx-auto flex items-center justify-between">
-      <div className="font-mono text-sm">
+      <div className="font-mono text-sm gap-2">
         <span style={{ color: '#34d399' }}>obadiah</span>
-        <span style={{ color: '#71717a' }}>.dev</span>
+        <span style={{ color: '#71717a' }}>@portfolio</span>
       </div>
       <div className="flex items-center gap-6">
         <a href="#experience" className="text-sm transition-opacity hover:opacity-70" style={{ color: '#a1a1aa' }}>Experience</a>

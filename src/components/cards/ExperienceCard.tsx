@@ -30,9 +30,9 @@ export const ExperienceCard = ({
     </div>
     <div className="space-y-2 mb-4">
       {highlights.map((highlight, i) => (
-        <p key={i} className="text-sm flex items-start gap-2" style={{ color: '#a1a1aa' }}>
-          <span style={{ color: '#10b981' }} className="mt-1">•</span>
-          {highlight}
+        <p key={i} className="text-sm flex items-center gap-2" style={{ color: '#a1a1aa' }}>
+          <span style={{ color: '#10b981' }}>•</span>
+          <span>{highlight}</span>
         </p>
       ))}
     </div>
