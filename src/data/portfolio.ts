@@ -68,7 +68,7 @@ export const projects: Project[] = [
     metrics: [
       { value: '~300ms', label: 'Launch Time' },
       { value: '10+', label: 'Systems Unified' },
-      { value: '13x', label: 'Faster Than Official' }
+      { value: '13x', label: 'Faster Than Official App' }
     ],
     tech: ['SwiftUI', 'PassKit', 'Swift Concurrency', 'Combine', 'SwiftData', 'MapKit']
   },

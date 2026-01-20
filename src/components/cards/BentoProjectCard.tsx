@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import type { ProjectCardProps } from '../../types';
+import { ImagePreviewModal } from '../ui/ImagePreviewModal';
 
 export const BentoProjectCard = ({
   title,
@@ -11,8 +13,12 @@ export const BentoProjectCard = ({
   images,
   featured = false
 }: ProjectCardProps) => {
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const hasMultipleImages = images && images.length > 0;
   const hasSingleImage = image && !hasMultipleImages;
+
+  // Get all images as array for the modal
+  const allImages = hasMultipleImages ? images : hasSingleImage ? [image] : [];
 
   return (
     <div
@@ -33,12 +39,13 @@ export const BentoProjectCard = ({
               key={i}
               src={img}
               alt={`${title} screenshot ${i + 1}`}
-              className="w-auto object-contain rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-110 hover:z-10"
+              className="w-auto object-contain rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-110 hover:z-10 cursor-pointer"
               style={{
                 maxHeight: featured ? '350px' : '200px',
                 maxWidth: `${85 / images.length}%`,
                 filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))'
               }}
+              onClick={() => setPreviewIndex(i)}
             />
           ))}
         </div>
@@ -50,11 +57,12 @@ export const BentoProjectCard = ({
           <img
             src={image}
             alt={`${title} screenshot`}
-            className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-105 cursor-pointer"
             style={{
               maxHeight: featured ? '300px' : '200px',
               filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))'
             }}
+            onClick={() => setPreviewIndex(0)}
           />
         </div>
       )}
@@ -146,6 +154,16 @@ export const BentoProjectCard = ({
           ))}
         </div>
       </div>
+
+      {previewIndex !== null && allImages.length > 0 && (
+        <ImagePreviewModal
+          images={allImages}
+          initialIndex={previewIndex}
+          alt={`${title} preview`}
+          isOpen={previewIndex !== null}
+          onClose={() => setPreviewIndex(null)}
+        />
+      )}
     </div>
   );
 };
