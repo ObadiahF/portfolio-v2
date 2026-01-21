@@ -3,7 +3,7 @@ import { FileText } from 'lucide-react';
 import { TerminalPrompt } from '../ui/TerminalPrompt';
 import { ScrollDownButton } from '../ui/ScrollDownButton';
 
-const roleLabels = ['iOS Engineer @ Vox', 'AI Researcher @ GCU', "May '26 Grad"];
+const roleLabels = ['Prev SWE Intern @ Apple', 'AI Researcher @ GCU', "May '26 Grad"];
 
 export const HeroSection = () => {
   const [mounted, setMounted] = useState(false);

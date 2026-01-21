@@ -6,6 +6,7 @@ import { ProjectsSection } from './components/sections/ProjectsSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/sections/Footer';
 import { GlobalStyles } from './styles/GlobalStyles';
+import { CursorGlow } from './components/ui/CursorGlow';
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -16,6 +17,9 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#09090b', color: '#ffffff' }}>
+      {/* Cursor glow effect */}
+      <CursorGlow />
+
       {/* Animated background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div

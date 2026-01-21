@@ -1,7 +1,7 @@
 export const Navigation = () => (
   <nav
     className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
-    style={{ backgroundColor: 'rgba(9,9,11,0.8)', backdropFilter: 'blur(12px)' }}
+    style={{ backdropFilter: 'blur(12px)' }}
   >
     <div className="max-w-6xl mx-auto flex items-center justify-between">
       <div className="font-mono text-sm">

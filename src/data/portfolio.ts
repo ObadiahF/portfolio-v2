@@ -68,7 +68,7 @@ export const projects: Project[] = [
     metrics: [
       { value: '6,000+', label: 'Active Users' },
       { value: '5-Layer', label: 'Clean Architecture' },
-      { value: 'Production', label: 'App Store Live' }
+      { value: 'Blazingly', label: 'Fast' }
     ],
     tech: ['Swift', 'SwiftUI', 'Firebase', 'Clean Architecture'],
   },
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     featured: false,
     metrics: [
       { value: 'RAG', label: 'Retrieval' },
-      { value: 'Real-time', label: 'Transcription' },
+      { value: 'Real-time', label: 'Tool Calling' },
       { value: 'AI', label: 'Q&A' }
     ],
     tech: ['Python', 'Whisper', 'RAG', 'LangChain', 'ChromaDB']
@@ -160,7 +160,7 @@ export const projects: Project[] = [
       { value: '20+', label: 'Services' },
       { value: 'Docker', label: 'Containerized' },
     ],
-    tech: ['Docker', 'Docker Compose', 'Nginx', 'Traefik', 'Portainer'],
+    tech: ['Docker', 'Kubernetes', 'Nginx', 'Portainer'],
   }
 ];
 
