@@ -143,7 +143,7 @@ export const BentoProjectCard = ({
                 style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
               >
                 <p
-                  className="text-xl font-bold"
+                  className="text-sm md:text-xl font-bold"
                   style={{
                     background: 'linear-gradient(90deg, #34d399 0%, #22d3ee 100%)',
                     WebkitBackgroundClip: 'text',
