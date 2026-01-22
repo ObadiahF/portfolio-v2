@@ -127,7 +127,6 @@ export const projects: Project[] = [
       { value: '13x', label: 'Faster Than Official App' }
     ],
     tech: ['SwiftUI', 'PassKit', 'Swift Concurrency', 'Combine', 'SwiftData', 'MapKit'],
-    links: { github: 'https://github.com/ObadiahF/LopesPlus' }
   },
   {
     title: 'Event Coordination Platform',
