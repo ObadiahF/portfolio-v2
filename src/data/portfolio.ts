@@ -77,8 +77,8 @@ export const projects: Project[] = [
     title: 'Productivity OS',
     description: 'AI-powered project management app for macOS. Features intelligent task prioritization, natural language commands, RAG-based context retrieval, and autonomous tool execution.',
     images: [
-      '/projects/productivity-os/home.svg',
-      '/projects/productivity-os/chat.svg'
+      '/projects/productivity-os/home.jpeg',
+      '/projects/productivity-os/chat.jpeg'
     ],
     featured: true,
     metrics: [
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       { value: 'Native', label: 'macOS App' },
       { value: 'AI', label: 'Tool Calling' }
     ],
-    tech: ['Swift', 'SwiftUI', 'RAG', 'LLM Tool Calling', 'CoreData'],
+    tech: ['Swift', 'SwiftUI', 'RAG', 'LLM Tool Calling', 'SwiftData'],
   },
   {
     title: 'Source Mind',

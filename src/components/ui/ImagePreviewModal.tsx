@@ -121,8 +121,7 @@ export const ImagePreviewModal = ({
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center"
       style={{
-        backgroundColor: 'rgba(0, 0, 0, 0.95)',
-        backdropFilter: 'blur(12px)'
+        backgroundColor: '#000000'
       }}
       onClick={onClose}
       onTouchStart={handleTouchStart}
@@ -153,7 +152,7 @@ export const ImagePreviewModal = ({
 
       {/* Image carousel container */}
       <div
-        className="relative overflow-hidden"
+        className="relative overflow-hidden bg-black"
         style={{ width: '85vw', height: '85vh' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -165,34 +164,34 @@ export const ImagePreviewModal = ({
           }}
         >
           {/* Previous image */}
-          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center bg-black">
             <img
               src={images[prevIndex]}
               alt={`${alt} ${prevIndex + 1}`}
-              className="max-w-full max-h-full object-contain rounded-lg select-none"
-              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              className="max-w-full max-h-full object-cover select-none"
+              style={{ backgroundColor: '#000000', transform: 'scale(1.02)' }}
               draggable={false}
             />
           </div>
 
           {/* Current image */}
-          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center bg-black">
             <img
               src={images[currentIndex]}
               alt={`${alt} ${currentIndex + 1}`}
-              className="max-w-full max-h-full object-contain rounded-lg select-none"
-              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              className="max-w-full max-h-full object-cover select-none"
+              style={{ backgroundColor: '#000000', transform: 'scale(1.05)' }}
               draggable={false}
             />
           </div>
 
           {/* Next image */}
-          <div className="flex-shrink-0 w-full h-full flex items-center justify-center">
+          <div className="flex-shrink-0 w-full h-full flex items-center justify-center bg-black">
             <img
               src={images[nextIndex]}
               alt={`${alt} ${nextIndex + 1}`}
-              className="max-w-full max-h-full object-contain rounded-lg select-none"
-              style={{ filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))' }}
+              className="max-w-full max-h-full object-cover select-none"
+              style={{ backgroundColor: '#000000', transform: 'scale(1.02)' }}
               draggable={false}
             />
           </div>
