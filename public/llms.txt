@@ -1,0 +1,50 @@
+# Obadiah Fusco
+
+> Software Engineer on the Productivity Apps team at Apple. Builds iOS apps, AI systems, and full-stack applications. Based in Vancouver, WA.
+
+## About
+
+- Name: Obadiah Fusco
+- Role: Software Engineer, Productivity Apps at Apple
+- Location: Vancouver, WA
+- Focus areas: Swift / SwiftUI / Objective-C, AI / LLM tooling, full-stack web
+- Contact: obadiahfusco@gmail.com
+- Website: https://obadiahfusco.com
+
+## Experience
+
+- **Apple — Software Engineer, Productivity Apps** (Jul 2026 – Present, Vancouver, WA)
+  Building productivity applications shipped to millions of Apple users worldwide. Stack: Swift, SwiftUI, Objective-C.
+
+- **The Vox Company — Software Engineer, Contract** (Nov 2025 – Apr 2026, Phoenix, AZ)
+  Architected a social platform (Hornscore) with 6,000+ active users using a five-layer clean architecture pattern. Stack: Swift, SwiftUI, Firebase.
+
+- **Apple — Software Engineering Intern** (May 2025 – Aug 2025, Cupertino, CA)
+  Designed and shipped a new feature for Pages on iCloud inside an 8M+ line codebase. Presented to senior leadership. Stack: Swift, Objective-C, TypeScript, Xcode, Jenkins.
+
+- **Canyon AI Research Lab — Research Intern** (Sep 2024 – Apr 2026, Phoenix, AZ)
+  Researched EEG-to-wheelchair-movement translation. Built a CNN reaching 97% accuracy on EEG datasets to enable enhanced mobility for disabled individuals. Stack: Python, PyTorch, Scikit-learn.
+
+- **Fifth Gear Tech — Software Engineering Intern** (Jun 2023 – Aug 2024, Vancouver, WA)
+  Integrated AWS DynamoDB caching that improved data retrieval times by 42%. Built reusable AWS-integration libraries. Stack: React, Node.js, TypeScript, Express, AWS DynamoDB, AWS Lambda.
+
+## Featured Projects
+
+- **Hornscore** — Social platform for hunters. 6,000+ active users, five-layer clean architecture. Swift, SwiftUI, Firebase.
+- **Vale** — AI-powered project management app for macOS. Intelligent task prioritization, natural language commands, RAG-based context retrieval, autonomous tool execution. Swift, SwiftUI, RAG, LLM tool calling, SwiftData.
+- **Lopes+** — Consolidated 10+ university systems into one mobile experience (digital student ID, real-time gym status, live dining cameras, campus navigation). ~300ms launch time, 13x faster than the official app. SwiftUI, PassKit, Swift Concurrency, Combine, SwiftData, MapKit.
+
+## Other Projects
+
+- **Source Mind** — AI transcription and meeting analyzer with RAG-based Q&A. Python, Whisper, RAG, LangChain, ChromaDB.
+- **HB Online Coaching** — Full-stack coaching platform with Stripe payments, real-time chat, and scheduling. SvelteKit, Firebase, AWS Lambda, Stripe, Resend.
+- **Event Coordination Platform** — Event creation, attendance tracking, real-time SMS via email-to-SMS gateway. Built and shipped in one week. React, MongoDB, Express, Tailwind, Node.js.
+- **Math Game** — Multiplayer math game with WebSocket-powered lobbies and real-time scoring. Vanilla JS, Node.js, Socket.IO, Express.
+- **HomeLab** — Personal infrastructure running 20+ self-hosted services (media, automation, monitoring, backups, dev environments). Docker, Kubernetes, Nginx, Portainer.
+
+## Links
+
+- Portfolio: https://obadiahfusco.com
+- GitHub: https://github.com/ObadiahF
+- LinkedIn: https://linkedin.com/in/obadiah-fusco-5813032ba
+- Email: obadiahfusco@gmail.com

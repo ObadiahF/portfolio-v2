@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Obadiah Fusco",
+  "url": "https://obadiahfusco.com",
+  "image": "https://obadiahfusco.com/favicon.svg",
+  "jobTitle": "Software Engineer, Productivity Apps",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Apple",
+    "url": "https://www.apple.com"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vancouver",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "email": "mailto:obadiahfusco@gmail.com",
+  "sameAs": [
+    "https://github.com/ObadiahF",
+    "https://linkedin.com/in/obadiah-fusco-5813032ba"
+  ],
+  "knowsAbout": [
+    "Swift",
+    "SwiftUI",
+    "Objective-C",
+    "iOS Development",
+    "macOS Development",
+    "Artificial Intelligence",
+    "Large Language Models",
+    "Retrieval-Augmented Generation",
+    "React",
+    "TypeScript",
+    "Full-Stack Development"
+  ],
+  "description": "Software Engineer on the Productivity Apps team at Apple. Builds iOS apps, AI systems, and full-stack applications."
+}
