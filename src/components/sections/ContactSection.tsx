@@ -26,8 +26,8 @@ export const ContactSection = () => (
         <GlassCard className="p-8 mt-8">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffffff' }}>Let's Connect</h2>
           <p className="mb-8 max-w-xl" style={{ color: '#a1a1aa' }}>
-            Currently seeking new grad Software Engineering roles for May 2026.
-            Open to iOS, AI/ML, and full-stack opportunities.
+            Always happy to chat about iOS, AI/ML, or full-stack engineering.
+            Reach out anytime.
           </p>
 
           <div className="flex flex-wrap gap-4">
