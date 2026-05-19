@@ -3,8 +3,6 @@ import { FileText } from 'lucide-react';
 import { TerminalPrompt } from '../ui/TerminalPrompt';
 import { ScrollDownButton } from '../ui/ScrollDownButton';
 
-const roleLabels = ['Prev SWE Intern @ Apple', 'AI Researcher @ GCU', "May '26 Grad"];
-
 export const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -45,30 +43,6 @@ export const HeroSection = () => {
             <span style={{ color: '#a78bfa' }}>full-stack experiences</span>.
           </p>
 
-          <div
-            className={`flex items-center gap-3 text-sm font-mono mt-6 flex-wrap transition-all duration-700 ease-out ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '300ms' }}
-          >
-            {roleLabels.map((label, index) => (
-              <div key={label} className="flex items-center gap-3">
-                <span
-                  className="px-2 py-1 rounded"
-                  style={{
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    color: '#a1a1aa'
-                  }}
-                >
-                  {label}
-                </span>
-                {index < roleLabels.length - 1 && (
-                  <span className="hidden md:inline" style={{ color: '#3f3f46' }}>→</span>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
 
         <div

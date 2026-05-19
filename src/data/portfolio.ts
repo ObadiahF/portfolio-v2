@@ -3,6 +3,32 @@ import type { Experience, Project } from '../types';
 export const experiences: Experience[] = [
   {
     company: 'Apple',
+    role: 'Software Engineer, Productivity Apps',
+    date: 'Jul 2026 - Present',
+    location: 'Vancouver, WA',
+    logo: '/Apple.jpeg',
+    tech: ['Swift', 'SwiftUI', 'Objective-C'],
+    highlights: [
+      'Building productivity applications on the Productivity Apps team',
+      'Shipping features used by millions of Apple users worldwide',
+      'Collaborating across teams on cross-platform Apple software'
+    ]
+  },
+  {
+    company: 'The Vox Company',
+    role: 'Software Engineer (Contract)',
+    date: 'Nov 2025 - Apr 2026',
+    location: 'Phoenix, AZ',
+    logo: '/TheVoxCompany.jpeg',
+    tech: ['Swift', 'SwiftUI', 'Firebase'],
+    highlights: [
+      'Architected social platform with 6,000+ active users',
+      'Implemented five-layer clean architecture pattern',
+      'Built activity feeds, messaging, and community features'
+    ]
+  },
+  {
+    company: 'Apple',
     role: 'Software Engineering Intern',
     date: 'May 2025 - Aug 2025',
     location: 'Cupertino, CA',
@@ -15,27 +41,14 @@ export const experiences: Experience[] = [
     ]
   },
   {
-    company: 'The Vox Company',
-    role: 'Software Engineer (Contract)',
-    date: 'Nov 2025 - Present',
-    location: 'Phoenix, AZ',
-    logo: '/TheVoxCompany.jpeg',
-    tech: ['Swift', 'SwiftUI', 'Firebase'],
-    highlights: [
-      'Architected social platform with 6,000+ active users',
-      'Implemented five-layer clean architecture pattern',
-      'Built activity feeds, messaging, and community features'
-    ]
-  },
-  {
     company: 'Canyon AI Research Lab',
     role: 'Research Intern',
-    date: 'Sep 2024 - Present',
+    date: 'Sep 2024 - Apr 2026',
     location: 'Phoenix, AZ',
     logo: '/CanyonAIResearch.jpeg',
     tech: ['Python', 'PyTorch', 'Scikit-learn'],
     highlights: [
-      'Researching EEG to wheelchair movement translation',
+      'Researched EEG to wheelchair movement translation',
       'Developed CNN achieving 97% accuracy on EEG datasets',
       'Enabling enhanced mobility for disabled individuals'
     ]
@@ -74,7 +87,7 @@ export const projects: Project[] = [
   },
 
   {
-    title: 'Productivity OS',
+    title: 'Vale',
     description: 'AI-powered project management app for macOS. Features intelligent task prioritization, natural language commands, RAG-based context retrieval, and autonomous tool execution.',
     images: [
       '/projects/productivity-os/home.jpeg',
